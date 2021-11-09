@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log me in</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="column is-6 is-offset-3 has-text-centered">
+                <div class="box">
+                    <h1 class="title">Admin Panel</h1>
+                    {% if failed %}
+                    <article class="message is-danger">
+                        <div class="message-body">
+                            Login failed Q_Q
+                        </div>
+                    </article>
+                    {% endif %}
+                    <form method="POST" action="/login" id="form">
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" type="text" name="username" placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" type="password" name="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <button class="button is-block is-info is-fullwidth">
+                            Login
+                        </button>
+                    </form>
+                    <hr>
+                    <a id="magic">Magic</a>
+                </div>
+                <article class="message is-link is-hidden is-size-3" id="hint">
+                    <div class="message-body is-family-monospace">
+                        SELECT * FROM admin WHERE
+                        (username='<span class="has-text-danger" id="username"></span>')
+                        AND (password='<span class="has-text-danger" id="password"></span>')
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        magic.onclick = () => hint.classList.toggle("is-hidden");
+        window.onload = form.oninput = () =>
+            [username.textContent, password.textContent] = [form.username.value, btoa(form.password.value)];
+    </script>
+</body>
+
+</html>

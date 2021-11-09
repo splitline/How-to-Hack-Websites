@@ -1,0 +1,24 @@
+version: "3.5"
+
+services:
+    pickle:
+        image: tiangolo/uwsgi-nginx-flask:python3.8
+        volumes:
+            - ./pickle/:/app
+            - ./_flags/pickle:/flag_5fb2acebf1d0c558
+        ports:
+            - 8600:80/tcp
+    cat:
+        build: ./cat
+        volumes:
+            - ./cat/:/var/www/html/
+            - ./_flags/cat:/flag_5fb2acebf1d0c558
+        ports:
+            - 8601:80/tcp
+    magic-cat:
+        image: php:7.4-apache
+        volumes:
+            - ./magic-cat/:/var/www/html/
+            - ./_flags/magic-cat:/flag_23907376917516c8
+        ports:
+            - 8602:80/tcp

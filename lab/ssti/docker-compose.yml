@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  ssti:
+    image: tiangolo/uwsgi-nginx-flask:python3.8
+    volumes:
+      - ./jinja/:/app
+      - ./flag:/th1s_15_fl4ggggggg
+    ports:
+      - 8700:80/tcp

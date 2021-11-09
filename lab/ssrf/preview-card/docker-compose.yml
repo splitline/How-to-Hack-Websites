@@ -1,0 +1,11 @@
+version: "3.5"
+
+services:
+    preview-card:
+        image: php:7.4-apache
+        volumes:
+            - ./src:/var/www/html
+        ports:
+            - 8500:80/tcp
+        environment:
+            - FLAG=FLAG{lab_flag}

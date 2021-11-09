@@ -1,0 +1,15 @@
+
+version: "3.5"
+
+services:
+  the.c0o0o0l-fl444g.server.internal:
+    build: 
+      context: ./flag
+
+  ssrfrog:
+    build: 
+      context: ./src
+    environment: 
+      - NODE_ENV=production
+    ports:
+      - 8501:3000/tcp

@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  log-me-in:
+    image: tiangolo/uwsgi-nginx-flask:python3.8
+    volumes:
+      - ./login-me/app/:/app
+    ports:
+      - 8200:80/tcp
+
+  log-me-in-again:
+    image: tiangolo/uwsgi-nginx-flask:python3.8
+    volumes:
+      - ./login-me-again/app/:/app
+    ports:
+      - 8201:80/tcp
+
+
+  meow:
+    build: ./meow
+    ports:
+      - "8202:80/tcp"
+    depends_on:
+      - meow-db
+
+  meow-db:
+    image: mariadb:10
+    volumes:
+      - ./meow/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=1
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pa55w0rd
+      - MYSQL_DATABASE=db
+    restart: always

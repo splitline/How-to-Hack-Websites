@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Shop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+
+<body>
+    <section class="hero is-link">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="/" class="navbar-item is-active">
+                                Home
+                            </a>
+                            <a class="navbar-item">
+                                💰 You have ${{session.money}} now.
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="hero-body">
+            <p class="title">
+                Cat shop
+            </p>
+            <p class="subtitle">
+                🐱 🐱 🐱
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                {% for id, item in items.items() %}
+                <div class="column">
+                    <div class="box">
+                        <h1 class="title is-5">{{item.0}}</h1>
+                        <p>${{item.1}}</p>
+                        <hr>
+                        {% if item.0 == "FLAG" %}
+                        <a class="button is-light is-fullwidth" title="No longer be sold" disabled>🥲</a>
+                        {% else %}
+                        <a href="/item/{{id}}" class="button is-link is-light is-fullwidth">Buy it!</a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <hr>
+            <h1 class="title">Cat list</h1>
+            <ol>
+                {% for cat in session.stuff %}
+                <li>
+                    You got a(n) <b>{{cat.0}}</b> 🐱
+                    {% if cat.0 == "FLAG" %}<code>FLAG{lab_flag}
+                </li>
+                {% else %}
+                    <p>You don't have any cat yet...</p>
+                {% endfor %}
+            </ol>
+        </div>
+    </section>
+
+</body>
+
+</html>

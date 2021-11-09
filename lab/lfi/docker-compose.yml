@@ -1,0 +1,18 @@
+version: "3.5"
+
+services:
+    meow-site:
+        image: php:7.4-apache
+        volumes:
+            - ./meow-site:/var/www/html
+        ports:
+            - 8400:80/tcp
+        environment:
+            - FLAG=FLAG{lab_flag}
+    hakka-md:
+        image: php:7.4-apache
+        volumes:
+            - ./HakkaMD/src:/var/www/html
+            - ./HakkaMD/flag:/flag_aff6136bbef82137:ro
+        ports:
+            - 8401:80/tcp

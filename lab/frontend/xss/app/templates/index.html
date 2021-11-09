@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>XSS Me</title>
+
+	<link rel="stylesheet" href="/static/bulma.min.css">
+	<link rel="stylesheet" href="/static/sweetalert2.min.css">
+	<script src="/static/sweetalert2.min.js"></script>
+</head>
+
+<body>
+	<section class="hero is-primary is-fullheight">
+		<div class="hero-body">
+			<div class="container">
+				<div class="columns is-centered">
+					<div class="column is-5-tablet is-4-desktop is-3-widescreen">
+						<form method="POST" action="/login" class="box">
+							<div class="field">
+								<label for="" class="label">Username</label>
+								<div class="control">
+									<input type="text" name="username" placeholder="guest" class="input" required>
+								</div>
+							</div>
+							<div class="field">
+								<label for="" class="label">Password</label>
+								<div class="control">
+									<input type="password" name="password" placeholder="guest" class="input" required>
+								</div>
+							</div>
+							<div class="field">
+								<button class="button is-success is-fullwidth">
+									登入
+								</button>
+							</div>
+							<div class="field">
+								<a href="/report" class="button is-danger is-fullwidth">
+									向 admin 回報錯誤
+								</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script>
+		const message = {{ message | safe }};
+		window.onload = function () {
+			if (message !== null) Swal.fire(message);
+		}
+	</script>
+</body>
+
+</html>

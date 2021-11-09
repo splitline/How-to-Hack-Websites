@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  dnstool:
+    build: ./dnstool
+    volumes:
+      - ./dnstool/src/:/var/www/html/
+      - ./dnstool/flag:/flag_44ebd3936a907d59:ro
+    ports:
+      - 8300:80/tcp
+
+  dnstool-waf:
+    build: ./dnstool-waf
+    volumes:
+      - ./dnstool-waf/src/:/var/www/html/
+      - ./dnstool-waf/flag:/flag_f4b9830a65d9e956:ro
+    ports:
+      - 8301:80/tcp

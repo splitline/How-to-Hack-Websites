@@ -1,0 +1,10 @@
+{
+  "name": "ssrfrog-flag",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
