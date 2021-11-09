@@ -12,11 +12,11 @@
 
 [Full slide](slides/week/week1.pdf)
 
-- Web & Web security introduction [slide](slides/topic/Web%20Basic.pdf)
+- Web & Web security introduction [[slide]](slides/topic/Web%20Basic.pdf)
 - Access control & Bussiness logic 
-- Recon & Information leak [slide](slides/topic/Recon%20&%20Info%20leak.pdf)
-- Insecure Upload / Path traversal / LFI [slide](slides/topic/Upload%20&%20LFI.pdf)
-- Basic injection [slide](slides/topic/Basic%20Injection%20(Code,%20Command,%20SQL).pdf)
+- Recon & Information leak [[slide]](slides/topic/Recon%20&%20Info%20leak.pdf)
+- Insecure Upload / Path traversal / LFI [[slide]](slides/topic/Upload%20&%20LFI.pdf)
+- Basic injection [[slide]](slides/topic/Basic%20Injection%20(Code,%20Command,%20SQL).pdf)
   - Code injection
   - Command injection
   - SQL injection: Basic
@@ -39,23 +39,23 @@
 
 [Full slide](slides/week/week3.pdf)
 
-- Insecure deserialization [slide](slides/topic/Deserialization.pdf)
+- Insecure deserialization [[slide]](slides/topic/Deserialization.pdf)
   - PHP
   - POP Chain
   - Misc (Java, .NET etc.)
-- Frontend security: Basic [slide](slides/topic/Fronted%20Security%20Basic%20(XSS,%20CSRF%20etc.).pdf)
+- Frontend security: Basic [[slide]](slides/topic/Fronted%20Security%20Basic%20(XSS,%20CSRF%20etc.).pdf)
   - Same-origin policy
   - CSRF
   - XSS
-- Frontend security: Content Security Policy (CSP) [slide](slides/topic/Frontend%20Security%20Content%20Security%20Policy.pdf)
+- Frontend security: Content Security Policy (CSP) [[slide]](slides/topic/Frontend%20Security%20Content%20Security%20Policy.pdf)
 - Frontend security: Advanced 
-  - XS-Leak / CSS injection [slide](slides/topic/Frontend%20Security%20Side%20Channel.pdf)
-  - DOM Clobbering [slide](slides/topic/Frontend%20Security%20DOM%20Clobbering.pdf)
+  - XS-Leak / CSS injection [[slide]](slides/topic/Frontend%20Security%20Side%20Channel.pdf)
+  - DOM Clobbering [[slide]](slides/topic/Frontend%20Security%20DOM%20Clobbering.pdf)
 - Advanced injection
   - NoSQL injection
   - Server-side template injection (SSTI)
 - Misc
-  - JavaScript prototype pollution [slide](slides/topic/JavaScript%20Prototype%20Pollution.pdf)
+  - JavaScript prototype pollution [[slide]](slides/topic/JavaScript%20Prototype%20Pollution.pdf)
   - XXE
 
 
@@ -93,5 +93,4 @@
 - Profile Card: XSS / CSRF / CSP Bypass
 - Double SSTI: SSTI
 - Log me in: FINAL: SQL injection / Information Leak
-
 
