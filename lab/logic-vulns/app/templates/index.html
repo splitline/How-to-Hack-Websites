@@ -62,7 +62,7 @@
                 {% for cat in session.stuff %}
                 <li>
                     You got a(n) <b>{{cat.0}}</b> 🐱
-                    {% if cat.0 == "FLAG" %}<code>FLAG{lab_flag}
+                    {% if cat.0 == "FLAG" %}<code>FLAG{lab_flag}</code>{% endif %}
                 </li>
                 {% else %}
                     <p>You don't have any cat yet...</p>
