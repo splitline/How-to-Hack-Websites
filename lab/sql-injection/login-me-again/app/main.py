@@ -66,7 +66,7 @@ def login():
 def source():
     import re
     source_code = open(__file__).read()
-    source_code = re.sub(r'FLAG{lab_flag}', source_code, 1)
+    source_code = re.sub(r'FLAG{.*}', r'FLAG{not_real_flag}', source_code, count=1)
     return Response(source_code, mimetype='text/plain')
 
 
