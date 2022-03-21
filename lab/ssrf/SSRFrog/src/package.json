@@ -2,7 +2,7 @@
   "name": "ssrfrog",
   "version": "0.0.0",
   "scripts": {
-    "start": "./bin/www"
+    "start": "sh ./bin/www"
   },
   "dependencies": {
     "express": "^4.17.1"
